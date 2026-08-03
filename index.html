@@ -1,0 +1,102 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Expense Tracker</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<link rel="manifest" href="manifest.json">
+	<meta name="theme-color" content="#04273b">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="Expense Tracker">
+	<link rel="apple-touch-icon" href="icons/icon-192.svg">
+</head>
+<body>
+	<main class="app">
+		<header class="app-header">
+			<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+				<div>
+					<h1>Expense Tracker</h1>
+					<p class="subtitle">Modern, simple and persistent — track your spending</p>
+				</div>
+				<div class="header-controls">
+					<label for="currency" class="visually-hidden">Currency</label>
+					<select id="currency" aria-label="currency">
+						<option value="INR" selected>₹ INR</option>
+						<option value="USD">$ USD</option>
+						<option value="EUR">€ EUR</option>
+						<option value="GBP">£ GBP</option>
+						<option value="JPY">¥ JPY</option>
+						<option value="CAD">CAD</option>
+						<option value="AUD">AUD</option>
+						<option value="CNY">CNY</option>
+					</select>
+					<button id="installBtn" class="btn" style="margin-left:10px;display:none">Install App</button>
+				</div>
+			</div>
+		</header>
+
+		<section class="balance-card card">
+			<div>
+				<small>Total Balance</small>
+				<h2 id="total">$0.00</h2>
+			</div>
+			<div class="summary">
+				<div>
+					<small>Income</small>
+					<div id="income">$0.00</div>
+				</div>
+				<div>
+					<small>Expenses</small>
+					<div id="expense">$0.00</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="controls card">
+			<form id="expense-form">
+				<div class="row">
+					<input id="title" placeholder="Title (e.g., Groceries)" required />
+					<select id="type" aria-label="type">
+						<option value="expense">Expense</option>
+						<option value="income">Income</option>
+					</select>
+					<input id="amount" placeholder="Amount" type="number" step="0.01" required />
+				</div>
+				<div class="row">
+					<input id="category" placeholder="Category (e.g., Food)" />
+					<input id="date" type="date" />
+				</div>
+				<div class="row actions">
+					<button type="submit" class="btn primary">Add Expense</button>
+					<button type="button" id="clear" class="btn">Clear All</button>
+				</div>
+			</form>
+		</section>
+
+		<section class="list card">
+			<div class="list-header">
+				<h3>Transactions</h3>
+				<div class="filters">
+					<select id="filter-month">
+						<option value="all">All</option>
+					</select>
+					<select id="filter-category">
+						<option value="all">All Categories</option>
+					</select>
+				</div>
+			</div>
+			<ul id="expenses"></ul>
+		</section>
+
+		<footer class="app-footer">
+			<small>Uses local browser storage. Background image pulled from project assets.</small>
+			<div style="margin-top:6px">© Utkarsh Verma</div>
+		</footer>
+	</main>
+
+	<script src="scrript.js"></script>
+</body>
+</html>

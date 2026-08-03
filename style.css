@@ -1,0 +1,75 @@
+
+:root{
+	--bg-overlay: rgba(6,10,20,0.55);
+	--card-bg: rgba(255,255,255,0.06);
+	--glass: rgba(255,255,255,0.06);
+	--accent: #6EE7B7;
+	--accent-2: #60A5FA;
+	--muted: rgba(255,255,255,0.8);
+	--glass-border: rgba(255,255,255,0.08);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+	color:var(--muted);
+	background:linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('Background image.jfif') center/cover no-repeat;
+	-webkit-font-smoothing:antialiased;
+}
+
+.app{
+	min-height:100vh;
+	display:flex;
+	flex-direction:column;
+	gap:18px;
+	max-width:980px;
+	margin:40px auto;
+	padding:28px;
+}
+
+.card{
+	background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+	border:1px solid var(--glass-border);
+	backdrop-filter: blur(6px) saturate(120%);
+	padding:16px;
+	border-radius:12px;
+}
+
+.app-header h1{margin:0;font-weight:700;font-size:1.6rem}
+.subtitle{margin:4px 0 0;color:rgba(255,255,255,0.75)}
+
+.header-controls{display:flex;align-items:center}
+.header-controls select{padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted)}
+.header-controls button{margin-left:8px}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.balance-card{display:flex;justify-content:space-between;align-items:center}
+.balance-card h2{font-size:2rem;margin:8px 0}
+.summary{display:flex;gap:18px}
+.summary div{min-width:120px}
+
+.controls form .row{display:flex;gap:12px;margin-bottom:12px}
+input{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted)}
+input[type=date]{max-width:190px}
+.btn{padding:8px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted);cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#04273b;border:none}
+.actions{justify-content:flex-end}
+
+.list-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+ul#expenses{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+ul#expenses li{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+.meta{display:flex;flex-direction:column}
+.category{font-size:0.85rem;color:rgba(255,255,255,0.7)}
+.amount{font-weight:600}
+.amount.negative{color:#fb7185}
+.amount.positive{color:#86efac}
+
+.app-footer{opacity:0.85;text-align:center;margin-top:8px}
+
+@media (max-width:720px){
+	.app{margin:12px;padding:16px}
+	.balance-card{flex-direction:column;align-items:flex-start;gap:10px}
+	.controls form .row{flex-direction:column}
+}
