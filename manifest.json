@@ -1,0 +1,24 @@
+{
+  "name": "कारYA",
+  "short_name": "कारYA",
+  "description": "A smart to-do list app with offline support, dark mode, and installable PWA features.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "icons": [
+    {
+      "src": "images/logo.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
